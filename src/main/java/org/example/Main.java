@@ -17,24 +17,24 @@ public class Main {
             BrowserContext context = SessionManager.initContext(browser);
             Page page = context.newPage();
 
-            // Блок логирования - начало
-            page.onResponse(response -> {
-                System.out.println("Response: " + response.status() + " " + response.url());
-            });
-
-            page.onRequestFailed(request -> {
-                System.out.println("FAILED: " + request.url());
-            });
-
-            page.onConsoleMessage(msg -> {
-                System.out.println("Console: " + msg.text());
-            });
-
-            page.onRequest(request -> {
-                System.out.println("Request: " + request.method() + " " + request.url());
-            });
-
-            // Блок логирования - конец
+//            // Блок логирования - начало
+//            page.onResponse(response -> {
+//                System.out.println("Response: " + response.status() + " " + response.url());
+//            });
+//
+//            page.onRequestFailed(request -> {
+//                System.out.println("FAILED: " + request.url());
+//            });
+//
+//            page.onConsoleMessage(msg -> {
+//                System.out.println("Console: " + msg.text());
+//            });
+//
+//            page.onRequest(request -> {
+//                System.out.println("Request: " + request.method() + " " + request.url());
+//            });
+//
+//            // Блок логирования - конец
 
             AuthModule.ensureLogin(page, context);
 
