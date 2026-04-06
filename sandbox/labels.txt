@@ -1,0 +1,77 @@
+<label for="NewCommentForm_image">Скриншот (не более 3мб, jpg, gif, png, jpeg)</label>
+<label for="NewCommentForm_reposturl2">Ссылка, которую Вы репостили, лайкнули или подписались</label> 
+<label for="NewCommentForm_repostname">Ваше имя или логин из соц. сети</label> 
+<label for="NewCommentForm_reposturl">Запись на Вашей стенке в случае репоста или Ваша страница для лайка или подписки</label>
+<label for="NewCommentForm_dop_info">Дополнительная информация заказчику</label>
+<label for="NewCommentForm_video_url">Ссылка на видео</label>
+
+
+main form with select
+<div class="choose_url_without_limit small-btn" data-url="https://yandex.ru/maps/-/CPuyZIks">Выбрать</div>
+
+
+pre form?
+<label for="LimitUrlForm_url" class="required">Страница, которую берете в работу <span class="required">*</span></label>
+<input placeholder="с http://" name="LimitUrlForm[url]" id="LimitUrlForm_url" type="text">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,202 @@
+<form enctype="multipart/form-data" id="model-form" action="/author/project/4400808" method="post">                        <div class="clearfix left-add-inf" style="position: relative; float: left; width: 469px;">
+                            <h3>Публикуйте отзывы от разных людей.</h3>
+
+                            <div class="form">
+                                <div class="control-group row error">
+                                 <label for="NewCommentForm_reposturl2">Ссылка на Instagram аккаунт на который вы подписались</label><input placeholder="с http://" name="NewCommentForm[url]" id="NewCommentForm_url" type="text"><div class="errorMessage" id="NewCommentForm_url_em_" style="">Укажите ссылку на Instagram аккаунт на который вы подписались</div>                                </div>
+                                
+
+
+                                                                    <div class="control-group row">
+                                                                                    <label for="NewCommentForm_repostname">Ваше имя или логин из соц. сети</label><input placeholder="НЕ ИСПОЛЬЗУЙТЕ ОДИН И ТОТ ЖЕ ЛОГИН НА ВСЕХ САЙТАХ!" name="NewCommentForm[name]" id="NewCommentForm_name" type="text" maxlength="255"><div class="errorMessage" id="NewCommentForm_name_em_" style="display:none"></div>                                                                            </div>
+                                
+                                                                                                            <div class="control-group row">
+                                            <label for="NewCommentForm_reposturl">Ссылка на ваш Instagram аккаунт</label>                                            <input placeholder="Ссылка на вашу стенку/страницу" name="NewCommentForm[message]" id="NewCommentForm_message" type="text" maxlength="8000" value="">                                            <div class="errorMessage" id="NewCommentForm_message_em_" style="display:none"></div>                                        </div>
+                                    
+                                    <input id="odnoklasnikiAcessToken" type="hidden" name="acessToken">
+                                    <input id="odnoklasnikiSessionSecret" type="hidden" name="sessionSecret">
+                                    <input id="timer_client" type="hidden" name="timer_client" val="0" value="1312">
+
+                                
+                                <div style="color:#a7a7a7; float:right; margin-top:8px;">
+                                    <span id="draftTime">Черновик еще не создан</span>
+                                    <span class="inf-qa hastip" title="Раз в 20 секунд, Ваша работа сохраняется. Если у Вас пропадет интернет соединение или по какой-то причине закроете вкладку, то при следующем открытии - работа загрузится. Для каждого проекта и дорабатываемой работы - свой черновик.&lt;BR&gt;Хранится 24 часа. Удаляется, после отправки работы на проверку.">?</span>
+                                </div>
+                                <div style="width:250px; margin-top:15px"><a href="#" id="show_dop_info">Необходимо указать дополнительную информацию заказчику?</a></div>
+                                <div class="control-group row" style="margin-top:15px; display:none" id="dop_info">
+                                    <label for="NewCommentForm_dop_info">Дополнительная информация заказчику</label>                                    <textarea style="width: 469px" placeholder="Здесь Вы можете указать дополнительную информацию заказчику. Внимание! Передача контактных данных запрещена!" rows="8" name="NewCommentForm[dop_info]" id="NewCommentForm_dop_info"></textarea>                                    <div class="errorMessage" id="NewCommentForm_dop_info_em_" style="display:none"></div>                                </div>
+                                <input value="" name="NewCommentForm[stop_words]" id="NewCommentForm_stop_words" type="hidden">                                <input value="0" name="NewCommentForm[symbols]" id="NewCommentForm_symbols" type="hidden">                                <input value="" name="NewCommentForm[pages]" id="NewCommentForm_pages" type="hidden">                                <input value="55" name="NewCommentForm[tarif]" id="NewCommentForm_tarif" type="hidden">                                <input value="0" name="NewCommentForm[notlong]" id="NewCommentForm_notlong" type="hidden">                                <div class="pull-right">
+
+                                    <a class="mini-btn no-btn no-margin pRefuse" style="padding:0; margin:0; margin-top:28px; cursor: pointer;">Отказаться от проекта</a>
+                                </div>
+                                <div class="row submit" style="width:505px; margin-top:20px">
+                                    <input type="submit" name="yt0" value="Отправить">                                </div>
+                            </div>
+                        </div>
+
+                                            </form>
+
+
+
+
+
+<form id="lmodel-form" action="/author/project/4853947" method="post">                    <div class="form">
+        <div class="row error" style="float:left; width: 100%">
+                 <label for="LimitUrlForm_url" class="required">Страница, которую берете в работу <span class="required">*</span></label>
+ 			<input placeholder="с http://" name="LimitUrlForm[url]" id="LimitUrlForm_url" type="text">                            
+
+
+
+
+                            <div class="errorMessage" id="LimitUrlForm_url_em_" style="">Выберите страницу, которую берете в работу</div>                        </div>
+
+                        <div class="row" style="float:left;">
+                            <input value="4853947" name="LimitUrlForm[project_id]" id="LimitUrlForm_project_id" type="hidden">                        </div>
+
+
+                        <div class="one_page_url">
+                            <div style="width: 100%; word-break: break-all;" id="placeForChooseUrl"></div>
+                            <div class="delete-url" style="display: none"><img src="/img/deleti.png"></div>
+                        </div>
+
+                        <div style="float: left; width: 100%;">
+                            <div class="row submit" style=" float: left; padding-top: 5px; width: 402px;">
+                                <input type="submit" name="yt0" value="Продолжить">                            </div>
+
+                            <div class="pull-right" style="text-align: right;">
+                                <a class="mini-btn no-btn pRefuse" style="padding:0; margin: 25px 0 0" href="#">Отказаться от проекта</a>
+                            </div>
+                        </div>
+
+                        <div style="clear:both"></div>
+                    </div>
+                    </form>
+
+
+<input placeholder="с http://" name="LimitUrlForm[url]" id="LimitUrlForm_url" type="text">
+
+
+<div class="control-group row error">
+	<label for="NewCommentForm_reposturl2">Ссылка на запись, которой поставили лайк</label>
+	<input placeholder="с http://" name="NewCommentForm[url]" id="NewCommentForm_url" type="text" value="htps://habr.com/ru/companies/tehrevizor/articles/1013332/">
+	<div class="errorMessage" id="NewCommentForm_url_em_" style="">Ссылка указана не верно.</div>
+</div>
+
+<div class="control-group row success">
+<label for="NewCommentForm_reposturl2">Ссылка на запись, которой поставили лайк</label>
+<input placeholder="с http://" name="NewCommentForm[url]" id="NewCommentForm_url" type="text" value="https://habr.com/ru/companies/tehrevizor/articles/1013332/">
+<div class="errorMessage" id="NewCommentForm_url_em_" style="display:none"></div></div>
+
+
+
+<div class="choose_url_without_limit small-btn" data-url="https://vk.com/plitochnikvk">Выбрать</div>
+
+<div id="list_with_page_url"></div>
+<div class="wall wall-no-margin" style="word-wrap: break-word;">
+	<h5>Список страниц, над которыми можно работать</h5>
+	<div class="one_page_url">               
+		<div class="choose_url_without_limit small-btn" data-url="https://vk.com/plitochnikvk">Выбрать</div>        
+		<a href="/site/go?url=https://vk.com/plitochnikvk" target="_blank">https://******/plitochnikvk</a><br>
+	</div>
+	<br>
+	<small style="position: relative; 4px;">Другие страницы сайта не будут приняты.</small>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
