@@ -5,6 +5,7 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.WaitForSelectorState;
 import org.example.modules.taskstate.TaskHandler;
 import org.example.utils.FormFiller;
+import org.example.utils.generators.*;
 
 public class MainFormHandler implements TaskHandler {
 
@@ -12,10 +13,9 @@ public class MainFormHandler implements TaskHandler {
     public void handle(Page page) {
         System.out.println("🧩 Обработка MAIN_FORM");
 
-
         for (int i = 0; i < 3; i++) {
-            String link = "example.com/epta" + (i + 1);
-            FormFiller.fillIfExists(page, FormFiller.urlField(page), link);
+            String link = UrlExtractor.extractUrl(page);
+            FormFiller.fillIfExists(page, FormFiller.urlField(page), link + i);
 
             if (!FormFiller.hasError(FormFiller.urlField(page))) {
                 System.out.println("✅ Поле заполнено успешно");

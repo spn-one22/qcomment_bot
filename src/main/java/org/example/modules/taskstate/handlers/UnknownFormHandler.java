@@ -7,6 +7,6 @@ public class UnknownFormHandler implements TaskHandler {
 
     @Override
     public void handle(Page page) {
-            System.out.println("🧩 MAIN_FORM_WITH_WALL handler");
+            System.out.println("🧩 UNKNOWN handler");
         }
     }

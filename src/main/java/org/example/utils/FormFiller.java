@@ -42,13 +42,7 @@ public class FormFiller {
         if (field.count() > 0 && field.isVisible()) {
             field.waitFor();
             field.click();
-            // разбиваем строку на символы
-            char[] chars = value.toCharArray();
-            for (char c : chars) {
-                // каждый символ нажимаем как клавишу
-                field.press(String.valueOf(c));
-                page.waitForTimeout(50 + new Random().nextInt(100));
-            }
+            field.fill(value);
             field.blur();
             System.out.println("✅ Заполнено поле: " + value);
         }

@@ -33,7 +33,7 @@ public class ProjectFilter {
 
         try {
             double price = PriceAnalyzer.parse(priceText);
-            if (price > 1) return false;
+            if (price > 3) return false;
         } catch (Exception e) {
             return false;
         }

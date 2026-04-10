@@ -7,7 +7,7 @@ public class PreFormWithSelectHandler implements TaskHandler {
 
     @Override
     public void handle(Page page) {
-        System.out.println("🧩 MAIN_FORM_WITH_WALL handler");
+        System.out.println("🧩 MAIN_FORM_WITH_SELECT handler");
     }
 }
 
