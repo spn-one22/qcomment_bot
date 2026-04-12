@@ -2,7 +2,7 @@ package org.example.config;
 
 public class Config {
 
-    public static final String BASE_URL = "https://qcomment.com/author?user=interfox";
+    public static final String BASE_URL = "https://qcomment.com/author/";
 
 }
 // https://qcomment.com/author?user=Frodo1111   - c предаполнением

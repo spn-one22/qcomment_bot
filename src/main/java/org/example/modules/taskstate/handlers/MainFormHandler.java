@@ -13,6 +13,9 @@ public class MainFormHandler implements TaskHandler {
 
     @Override
     public void handle(Page page) {
+
+        Random random = new Random();
+
         System.out.println("🧩 Обработка MAIN_FORM");
 
         // FILL TARGET LINK
@@ -33,9 +36,6 @@ public class MainFormHandler implements TaskHandler {
         String approvedUsername = null;
         String baseUsername = Extractor.extractUsername(page);
 
-        Locator usernameField = FormFiller.usernameField(page);
-        Random random = new Random();
-
         for (int i = 0; i < 3; i++) {
             String candidate;
 
@@ -50,9 +50,9 @@ public class MainFormHandler implements TaskHandler {
 
             System.out.println("Trying username: " + candidate);
 
-            FormFiller.fillIfExists(page, usernameField, candidate);
+            FormFiller.fillIfExists(page, FormFiller.usernameField(page), candidate);
 
-            if (!FormFiller.hasError(usernameField)) {
+            if (!FormFiller.hasError(FormFiller.usernameField(page))) {
                 System.out.println("✅ Поле заполнено успешно");
                 approvedUsername = candidate; // сохраняем именно успешный вариант
                 break;
@@ -63,39 +63,47 @@ public class MainFormHandler implements TaskHandler {
         }
 
         //FILL ACCOUNT LINK
-        if (approvedUsername == null) {
-            approvedUsername = Extractor.extractUsername(page);
-        }
+        if (approvedUsername != null) {
+            baseUsername = approvedUsername;
 
-        String accountLink = Extractor.extractBaseUrl(Extractor.extractUrl(page)) + approvedUsername;
-        for (int i = 0; i < 3; i++) {
+            Locator messageField = FormFiller.messageField(page);
 
-            FormFiller.fillIfExists(page, FormFiller.messageField(page), accountLink);
+            for (int i = 0; i < 3; i++) {
+                String candidate;
 
-            if (!FormFiller.hasError(FormFiller.messageField(page))) {
-                System.out.println("✅ Поле заполнено успешно");
-                break;
-            } else {
-                System.out.println("❌ Ошибка валидации, пробуем ещё раз");
-                accountLink = accountLink + i;
-                page.waitForTimeout(3000);
+                if (i == 0) {
+                    // первая попытка — просто username
+                    candidate = Extractor.extractBaseUrl(Extractor.extractUrl(page)) + baseUsername;
+                } else {
+                    // дальше — добавляем числа
+                    int randomNum = 1 + random.nextInt(99);
+                    candidate = Extractor.extractBaseUrl(Extractor.extractUrl(page)) + baseUsername + randomNum;
+                }
 
+                System.out.println("Trying accountLink: " + candidate);
+
+                FormFiller.fillIfExists(page, messageField, candidate);
+
+                if (!FormFiller.hasError(messageField)) {
+                    System.out.println("✅ Поле заполнено успешно");
+                    break;
+                }
             }
-        }
 
-        Locator dopInfoBtn = FormFiller.dopInfoButton(page);
-        if (dopInfoBtn.isVisible()) {
-            dopInfoBtn.click();
-            FormFiller.fillIfExists(page, FormFiller.dopInfoField(page), "Доп инфа");
-        }
+            Locator dopInfoBtn = FormFiller.dopInfoButton(page);
+            if (dopInfoBtn.isVisible()) {
+                dopInfoBtn.click();
+                FormFiller.fillIfExists(page, FormFiller.dopInfoField(page), "Доп инфа");
+            }
 
-        Locator submitBtn = FormFiller.submitButton(page);
-        submitBtn.waitFor();
-        page.waitForFunction(
-                "!document.querySelector('#model-form input[type=submit]').disabled"
-        );
-        submitBtn.click();
-        System.out.println("📤 Форма отправлена");
-        submitBtn.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.DETACHED));
+            Locator submitBtn = FormFiller.submitButton(page);
+            submitBtn.waitFor();
+            page.waitForFunction(
+                    "!document.querySelector('#model-form input[type=submit]').disabled"
+            );
+            submitBtn.click();
+            System.out.println("📤 Форма отправлена");
+            submitBtn.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.DETACHED));
+        }
     }
 }

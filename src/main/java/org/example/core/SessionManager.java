@@ -8,6 +8,7 @@ public class SessionManager {
 
     private static final String SESSION_FILE = "session.json";
 
+
     public static BrowserContext initContext(Browser browser) {
 
         Browser.NewContextOptions options = new Browser.NewContextOptions()
