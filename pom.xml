@@ -18,5 +18,14 @@
             <artifactId>playwright</artifactId>
             <version>1.43.0</version>
         </dependency>
+
+        <!-- HTTP клиент для проверки IP -->
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.12.0</version>
+        </dependency>
+
     </dependencies>
 </project>
+

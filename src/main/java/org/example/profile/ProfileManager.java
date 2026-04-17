@@ -8,7 +8,7 @@ public class ProfileManager {
 
     public static AccountProfile create(String id) {
 
-        AccountProfile profile = new AccountProfile();
+        AccountProfile profile = new AccountProfile(id);
 
         profile.id = id;
 

@@ -30,22 +30,22 @@ public class BrowserFactory {
         // 🔥 ВОТ ЗДЕСЬ ПРОКСИ
         if (profile.proxy != null) {
 
-            String scheme = profile.proxy.type.equals("socks5") ? "socks5://" : "http://";
+            String scheme = profile.proxy.getType().equals("socks5") ? "socks5://" : "http://";
 
             Proxy proxy = new Proxy(
-                    scheme + profile.proxy.host + ":" + profile.proxy.port
+                    scheme + profile.proxy.getHost() + ":" + profile.proxy.getPort()
             );
 
             // 🔥 ВОТ ЭТО ТЫ НЕ СДЕЛАЛ
-            if (profile.proxy.username != null) {
-                proxy.setUsername(profile.proxy.username);
-                proxy.setPassword(profile.proxy.password);
+            if (profile.proxy.getUsername() != null) {
+                proxy.setUsername(profile.proxy.getUsername());
+                proxy.setPassword(profile.proxy.getPassword());
             }
 
             options.setProxy(proxy);
 
-            System.out.println("🌐 Прокси: " + scheme + profile.proxy.host + ":" + profile.proxy.port);
-            System.out.println("🔐 Авторизация: " + profile.proxy.username);
+            System.out.println("🌐 Прокси: " + scheme + profile.proxy.getHost() + ":" + profile.proxy.getPort());
+            System.out.println("🔐 Авторизация: " + profile.proxy.getUsername());
         }
 
         return playwright.chromium().launch(options);

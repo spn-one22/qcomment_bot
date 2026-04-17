@@ -25,9 +25,9 @@ public class Main {
             System.out.println("Fingerprint: " + profile.fingerprint);
 
             if (profile.proxy != null) {
-                System.out.println("Proxy type: " + profile.proxy.type);
-                System.out.println("Proxy host: " + profile.proxy.host);
-                System.out.println("Proxy port: " + profile.proxy.port);
+                System.out.println("Proxy type: " + profile.proxy.getType());
+                System.out.println("Proxy host: " + profile.proxy.getHost());
+                System.out.println("Proxy port: " + profile.proxy.getPort());
             } else {
                 System.out.println("Proxy: NULL");
             }
